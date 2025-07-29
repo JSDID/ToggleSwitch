@@ -1,0 +1,51 @@
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .toggle__input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  
+  .toggle__label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 200px;
+    height: 100px;
+    background-color: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle__circle {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 90px;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease;
+  }
+  
+  /* Checked styles — через sibling */
+  .toggle__input:checked + .toggle__label {
+    background-color: #bada55;
+  }
+  
+  .toggle__input:checked + .toggle__label .toggle__circle {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  /* Active (pressed) effect */
+  .toggle__label:active .toggle__circle {
+    width: 130px;
+  }
+  

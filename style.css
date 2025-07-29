@@ -1,0 +1,57 @@
+/* Базова обгортка */
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Приховуємо чекбокс */
+  .toggle__input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  /* Стиль перемикача */
+  .toggle__label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 200px;
+    height: 100px;
+    background-color: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+  
+  /* Білий кружок */
+  .toggle__circle {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 90px;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease;
+  }
+  
+  /* Активний стан перемикача */
+  .toggle__input:checked + .toggle__label {
+    background-color: #bada55;
+  }
+  
+  /* Переміщення кружка вправо */
+  .toggle__input:checked + .toggle__label .toggle__circle {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  /* Ефект натискання */
+  .toggle__label:active .toggle__circle {
+    width: 130px;
+  }
+  
